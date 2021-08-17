@@ -1,19 +1,21 @@
-package com.imooc.miaosha.dao;
+package com.leslie.dao;
 
+import com.leslie.domain.MiaoshaOrder;
+import com.leslie.domain.OrderInfo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.springframework.stereotype.Component;
 
-import com.imooc.miaosha.domain.MiaoshaOrder;
-import com.imooc.miaosha.domain.OrderInfo;
 
 @Mapper
+@Component
 public interface OrderDao {
 	
 	@Select("select * from miaosha_order where user_id=#{userId} and goods_id=#{goodsId}")
-	public MiaoshaOrder getMiaoshaOrderByUserIdGoodsId(@Param("userId")long userId, @Param("goodsId")long goodsId);
+	public MiaoshaOrder getMiaoshaOrderByUserIdGoodsId(@Param("userId") long userId, @Param("goodsId") long goodsId);
 
 	@Insert("insert into order_info(user_id, goods_id, goods_name, goods_count, goods_price, order_channel, status, create_date)values("
 			+ "#{userId}, #{goodsId}, #{goodsName}, #{goodsCount}, #{goodsPrice}, #{orderChannel},#{status},#{createDate} )")
@@ -23,5 +25,4 @@ public interface OrderDao {
 	@Insert("insert into miaosha_order (user_id, goods_id, order_id)values(#{userId}, #{goodsId}, #{orderId})")
 	public int insertMiaoshaOrder(MiaoshaOrder miaoshaOrder);
 
-	
 }

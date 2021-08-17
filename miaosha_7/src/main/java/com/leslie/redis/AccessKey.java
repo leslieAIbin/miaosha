@@ -1,4 +1,4 @@
-package com.imooc.miaosha.redis;
+package com.leslie.redis;
 
 public class AccessKey extends BasePrefix{
 

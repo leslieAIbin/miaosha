@@ -1,4 +1,4 @@
-package com.imooc.miaosha.access;
+package com.leslie.access;
 
 import java.io.OutputStream;
 
@@ -6,6 +6,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.leslie.domain.MiaoshaUser;
+import com.leslie.redis.AccessKey;
+import com.leslie.result.CodeMsg;
+import com.leslie.result.Result;
+import com.leslie.service.MiaoshaUserService;
+import com.leslie.service.RedisService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +19,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.alibaba.fastjson.JSON;
-import com.imooc.miaosha.domain.MiaoshaUser;
-import com.imooc.miaosha.redis.AccessKey;
-import com.imooc.miaosha.redis.RedisService;
-import com.imooc.miaosha.result.CodeMsg;
-import com.imooc.miaosha.result.Result;
-import com.imooc.miaosha.service.MiaoshaUserService;
+
 
 @Service
 public class AccessInterceptor  extends HandlerInterceptorAdapter{

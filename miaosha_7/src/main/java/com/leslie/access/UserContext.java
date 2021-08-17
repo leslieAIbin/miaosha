@@ -1,6 +1,7 @@
-package com.imooc.miaosha.access;
+package com.leslie.access;
 
-import com.imooc.miaosha.domain.MiaoshaUser;
+
+import com.leslie.domain.MiaoshaUser;
 
 public class UserContext {
 	

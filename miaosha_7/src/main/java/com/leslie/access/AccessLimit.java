@@ -1,4 +1,4 @@
-package com.imooc.miaosha.access;
+package com.leslie.access;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

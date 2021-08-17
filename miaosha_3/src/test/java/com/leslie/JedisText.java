@@ -1,4 +1,4 @@
-package com.leslie.redis;
+package com.leslie;
 
 /**
  * @author Leslie
